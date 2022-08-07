@@ -11,11 +11,9 @@ user_number = Convert.ToInt32(Console.ReadLine());
 
 
 if (user_number % 2 == 0)
-
 {
     Console.WriteLine("Это число чётное");
 }
-
 else
 {
     Console.WriteLine("Это число нечётное");
