@@ -7,7 +7,7 @@ void CheckTheDay (int dayNumber)
   {
        if (dayNumber == 6 || dayNumber == 7)
           {
-             Console.WriteLine("(этот день выходной) -> да");
+             Console.WriteLine("этот день выходной -> да");
             }
         else if (dayNumber < 1 || dayNumber > 7) 
         {
@@ -15,7 +15,7 @@ void CheckTheDay (int dayNumber)
          }
    else 
     {  
-        Console.WriteLine("(этот день  выходной) -> нет");
+        Console.WriteLine("этот день  выходной -> нет");
       }
 }
 Console.Write("Введи цифру, обозначающую день недели: ");
