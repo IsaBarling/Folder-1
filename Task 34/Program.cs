@@ -17,22 +17,22 @@ void WriteArray(int[] array)
   Console.WriteLine();
 }
 
-int QuantityPositive(int[] array)
+int EvenNumbersInArray(int[] array)
 {
-    int quantity = 0;
-    for (int i = 0; i < array.Length; i++ )
+    int evenNumbers = 0;
+    foreach (int i in array)
     {
-    if (array[i] % 2 == 1)
+    if (i % 2 == 0)
     {
-      quantity++;
+      evenNumbers++;
     }
   }
-  return quantity;
+  return evenNumbers;
 }
 
 FillArray(numbers, 100, 1000);
 WriteArray(numbers);
 Console.WriteLine();
 
-int quantity = QuantityPositive(numbers);
-Console.WriteLine($"Количество чётных чисел в массиве: {quantity}");
+int evenNumbers = EvenNumbersInArray(numbers);
+Console.WriteLine($"Количество чётных чисел в массиве: {evenNumbers}");
