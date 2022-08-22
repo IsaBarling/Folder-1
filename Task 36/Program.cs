@@ -13,7 +13,7 @@ int RandomNumbers(int numberElements, int min, int max)
 
       Console.Write(randomNumbers[i] + " ");
 
-      if (i % 2 != 1)
+      if (i % 2 != 0 && i != 0)
       {
         sumOfElements = sumOfElements + randomNumbers[i];
       }
