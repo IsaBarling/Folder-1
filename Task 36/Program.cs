@@ -21,6 +21,6 @@ int RandomNumbers(int numberElements, int min, int max)
   return sumOfElements;
   }
 
-int randomNumbers =  RandomNumbers(numberElements, 1, 10);
+int randomNumbers =  RandomNumbers(numberElements, 1, 99);
 
 Console.WriteLine($"\nСумма элементов, стоящих на нечётных позициях: {randomNumbers}");
