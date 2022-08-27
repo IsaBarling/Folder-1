@@ -1,10 +1,13 @@
-﻿int[] newArray = new int[0];
+﻿// Задача 41: Пользователь вводит с клавиатуры M чисел. 
+// Посчитайте, сколько чисел больше 0 ввёл пользователь.
+
+int[] newArray = new int[0];
 
 SetArray(ref newArray);
-Console.WriteLine($"[{String.Join(",", newArray)}] -> {CheckNumberMoreZero(newArray)}");
+Console.WriteLine($"[{String.Join(",", newArray)}] -> {CheckNumber(newArray)}");
 
 
-int CheckNumberMoreZero(int[] array)
+int CheckNumber(int[] array)
 {
     int count = 0;
     foreach (int i in array)
@@ -19,32 +22,32 @@ int CheckNumberMoreZero(int[] array)
 
 string ReadFromConsole()
 {
-    string result = string.Empty;
+    string resultOutput = string.Empty;
     while (true)
     {
-        var k = Console.ReadKey(true);
-        switch (k.Key)
+        var pressedButton = Console.ReadKey(true);
+        switch (pressedButton.Key)
         {
             case ConsoleKey.Backspace:
-                if (result.Length > 0)
+                if (resultOutput.Length > 0)
                 {
-                    result = result.Remove(startIndex: result.Length - 1, count: 1);
-                    Console.Write(value: $"{k.KeyChar} {k.KeyChar}");
+                    resultOutput = resultOutput.Remove(startIndex: resultOutput.Length - 1, count: 1);
+                    Console.Write(value: $"{pressedButton.KeyChar} {pressedButton.KeyChar}");
                 }
                 break;
             case ConsoleKey.Enter:
                 Console.WriteLine();
-                return result;
+                return resultOutput;
             case ConsoleKey.Escape:
-                result = "out";
+                resultOutput = "out";
                 Console.SetCursorPosition(0, Console.CursorTop);
-                Console.WriteLine(value: "Нажали Esc, цикла ввода массива завершен ");
-                return result;
+                Console.WriteLine(value: "Нажали Esc, цикла ввода завершен ");
+                return resultOutput;
             default:
-                if (char.IsDigit(c: k.KeyChar) || (k.KeyChar == '-' && result.Length == 0))
+                if (char.IsDigit(c: pressedButton.KeyChar) || (pressedButton.KeyChar == '-' && resultOutput.Length == 0))
                 {
-                    Console.Write(value: k.KeyChar);
-                    result += k.KeyChar;
+                    Console.Write(value: pressedButton.KeyChar);
+                    resultOutput += pressedButton.KeyChar;
                 }
                 break;
         }
@@ -55,15 +58,15 @@ void SetArray(ref int[] array)
 {
     while (true)
     {
-        Console.WriteLine($"Введите число №{array.Length + 1} (Для окончания цикла ввода нажмите Esc):");
+        Console.WriteLine($"Введите число №{array.Length + 1} (Для завершения цикла ввода нажмите Esc):");
         try
         {
-            string st = ReadFromConsole();
-            if (st == "out")
+            string data = ReadFromConsole();
+            if (data == "out")
             {
                 break;
             }
-            int number = Convert.ToInt32(st);
+            int number = Convert.ToInt32(data);
             Array.Resize(ref array, array.Length + 1);
             array[array.Length - 1] = number;
         }
