@@ -12,17 +12,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            //byte[] arr = File.ReadAllBytes("Numbers.exe");
-
-            //Assembly executingAssembly = Assembly.GetExecutingAssembly();
-            //System.Reflection.Module manifestModule = executingAssembly.ManifestModule;
-            //System.Reflection.Module module = executingAssembly.LoadModule("ConsoleApp1.exe", arr);
-
-            ////AppDomain.CurrentDomain.AssemblyResolve += new ResolveEventHandler(Resolve);
-
-            //MethodBase methodBase = module.ResolveMethod(0);
-
-            //methodBase.Invoke(null, null);
+            
 
             int m = InputNumbers("Введите m: ");
             int n = InputNumbers("Введите n: ");
@@ -34,7 +24,7 @@ namespace ConsoleApp1
                 m = n;
                 n = temp;
             }
-            //PrintSumm(m, n);
+            
             PrintSumm2(m, n);
             Console.ReadLine();
         }
