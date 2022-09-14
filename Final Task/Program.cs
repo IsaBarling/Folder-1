@@ -22,6 +22,18 @@
                 }
             }
             
+            /*
+             * Этап 3 Вывод результатов.
+             */
+             
+             if (output.Length > 0)
+             {
+                Console.WriteLine(String.Join( ";", output));
+             }
+            else 
+            {
+                Console.WriteLine("Подходящее значение не найдено");
+            }
         }
 
         private static string[] AddElementToArray(string[] input, string v)
