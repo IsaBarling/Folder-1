@@ -9,9 +9,31 @@
              */
             string[] array = GetUserArray();
             
+            /*
+             * Этап 2 Выборка тех строк, где меньше четырех символов.
+             */
+            string[] output = new string[0];
+
+            for(int i = 0; i < array.Length; i++)
+            {
+                if(array[i].Length < 4)
+                {
+                    output = AddElementToArray(output, array[i]);
+                }
+            }
             
         }
 
+        private static string[] AddElementToArray(string[] input, string v)
+        {
+            string[] value = new string[input.Length + 1];
+            for(int i = 0; i < input.Length; i++)
+            {
+                value[i] = input[i];
+            }
+            value[value.Length - 1] = v;
+            return value;
+        }
         
 
         private static string[] GetUserArray()
